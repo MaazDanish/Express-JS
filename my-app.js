@@ -3,21 +3,19 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+//  My own files
+const adminRoute = require('./routes/admin');
+const shopRoute = require('./routes/shop');
+
+
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.use('/addProduct',(req,res,next) => {
-    res.send('<form action="/product" method="POST"> <input type="text" name="title"><input type="text" name="size"><button type="submit">Add Product</button></form>');
+//  if we use get and post in ruotes then order does not matter
+app.use('/admin',adminRoute);
+app.use('/shop',shopRoute);
 
-})
-
-app.use('/product',(req,res,next) => {
-    console.log(req.body);
-    res.redirect('/');
-})
-
-//  all routes shud be bfore thissss
-app.use('/', (req,res,next) =>{
-    res.send('<h1> HELLO FRIENDS FROM EXPRESS JS OF NODE JS');
+app.use((req,res,next)=> {
+    res.status(404).send('<h1> PAGE NOT FOUNT </h1>');
 })
 
 app.listen(4000);
