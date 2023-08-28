@@ -8,13 +8,19 @@ const app = express();
 const dirName = require('./path/path');
 const adminRoute = require('./routes/admin');
 const shopRoute = require('./routes/shop');
-
+const contactRoute = require('./routes/contact')
+const successRoute = require('./routes/success');
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/admin',adminRoute);
 app.use(shopRoute);
+app.use(contactRoute);
+app.use(successRoute);
+
+
+
 
 
 
