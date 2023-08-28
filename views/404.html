@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found</title>
+    <link rel="stylesheet" href="/error.css">
 </head>
+
 <body>
-    <h1>This site can’t be reached</h1>
-    <p>Check if there is a typo in your address</p>
-    <p>If spelling is correct, try running Windows Network Diagnostics.</p>
-    <p>DNS_PROBE_FINISHED_NXDOMAIN</p>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__itemList">
+                <li class="main-header__items"><a href="/">Shop</a></li>
+                <li class="main-header__items"><a href="/admin/addProduct" class="active">Add Product</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="error-controller">
+        <h1>This site can’t be reached</h1>
+        <p>Check if there is a typo in your address</p>
+        <p>If spelling is correct, try running Windows Network Diagnostics.</p>
+        <p>DNS_PROBE_FINISHED_NXDOMAIN</p>
+    </div>
 </body>
+
 </html>

@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product</title>
+    <link rel="stylesheet" href="/product.css">   
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/"></a>Shop</li>
-                <li><a href="/addProduct"></a>Add Product</li>
+    <header class="main-header">
+        <nav class="main-header__nav">
+            <ul class="main-header__itemList">
+                <li class="main-header__items"><a href="/">Shop</a></li>
+                <li class="main-header__items"><a href="/admin/addProduct" class="active">Add Product</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <form action="/admin/addProduct" method="POST">
-            <input type="text" name="title" id="title" placeholder="Product Title">
-            <input type="text" name="size" id="size" placeholder="Product Size">
-            <button type="submit">Add Product</button>
+        <form action="/admin/addProduct" method="POST" class="form-control">
+            <div class="form-inputController">
+                <label for="title">Product Name</label>
+                <input type="text" name="title" id="title" placeholder="Product Title" class="form-input">
+            </div>
+            <div class="form-inputController">
+                <label for="title">Product Size</label>
+                <input type="text" name="size" id="size" placeholder="Product Size" class="form-input">
+            </div>
+            <button type="submit" class="btn">Add Product</button>
         </form>
     </main>
 </body>
+
 </html>
