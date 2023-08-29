@@ -1,22 +1,11 @@
 const express = require('express')
-const path = require('path');
 
-const dirName = require('../path/path');
-
+const productController = require('../controller/contactus');
 const route = express.Router();
 
 // NOW WE CAN USE SAME PATH DIFRRENET METHOD
-route.get('/contact_us',(req,res,next) => {
-    res.sendFile(path.join(dirName,'views','contactUS.html'));
+route.get('/contact_us',productController.getContactUsPage);
 
-})
-
-route.post('/contact_us',(req,res,next) => {
-    console.log(req.body);
-    if(req.body.name === '' || req.body.email === ''){
-        res.send("All fields are Reuired");
-    }
-    res.redirect('/success');
-})
+route.post('/contact_us',productController.postDataOfContactUsPage);
 
 module.exports = route;
